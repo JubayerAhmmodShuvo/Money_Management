@@ -45,7 +45,10 @@ function cost() {
 function expense() {
     const expense = document.getElementById('total-expense');
     const totalExpense = expense.innerText;
-    expense.innerText = parseInt(totalExpense) + cost();
+
+
+    return expense.innerText = parseInt(totalExpense) + cost();
+
 }
 
 function balance() {
@@ -54,14 +57,24 @@ function balance() {
     const totalIncome = income();
     const totalExpense = cost();
     const total = totalIncome - totalExpense;
-    balance.innerText = parseInt(totalBalance) + total;
 
 
+    return balance.innerText = parseInt(totalBalance) + total;
 }
 
+
+
+
+
 document.getElementById('calculate-total').addEventListener('click', function() {
-    expense();
-    balance();
+    const expenceTotal = expense();
+    const balanceTotal = balance();
+    if (expenceTotal > 0 && balanceTotal > 0) {
+        expenseTotal;
+        balanceTotal;
+    } else {
+        alert('Please enter a valid amount');
+    }
 
 
 });
