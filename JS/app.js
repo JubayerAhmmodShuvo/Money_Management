@@ -4,17 +4,16 @@ function income() {
     const total = parseInt(totalIncome);
     if (total > 0) {
 
-
         return total;
-
     } else {
-        alert('Please enter a valid number');
+
+        alert('Please enter a valid Number');
+
+
+
     }
-    totalInput.value = '';
-
-
-
 }
+
 
 function cost() {
     const foodInput = document.getElementById('food-input');
@@ -31,23 +30,22 @@ function cost() {
 
 
     if (costOfFood > 0 && costOfRest > 0 && costOfCloth > 0) {
-        return totalCost;
-    } else {
-        alert('Please enter a valid number');
-    }
-    foodInput.value = '';
-    restInput.value = '';
-    clothInput.value = '';
 
+        return totalCost;
+    }
 
 }
 
 function expense() {
     const expense = document.getElementById('total-expense');
     const totalExpense = expense.innerText;
+    const total = parseInt(totalExpense) + cost();
 
 
-    return expense.innerText = parseInt(totalExpense) + cost();
+    if (total > 0) {
+        return expense.innerText = total;
+    }
+
 
 }
 
@@ -59,22 +57,60 @@ function balance() {
     const total = totalIncome - totalExpense;
 
 
-    return balance.innerText = parseInt(totalBalance) + total;
+    if (total > 0) {
+        return balance.innerText = parseInt(totalBalance) + total;
+    }
+
 }
 
 
 
 
 
+
 document.getElementById('calculate-total').addEventListener('click', function() {
-    const expenceTotal = expense();
-    const balanceTotal = balance();
-    if (expenceTotal > 0 && balanceTotal > 0) {
-        expenseTotal;
-        balanceTotal;
+
+    if (cost() > income()) {
+        alert('You are in debt');
     } else {
-        alert('Please enter a valid amount');
+        expense();
+        balance();
     }
 
+
+
+
+
+
+
+});
+//saving part
+
+function saving() {
+    const saveInput = document.getElementById('save-input');
+    const inputValue = saveInput.value;
+    const convertedValue = parseInt(inputValue) / 100;
+    const total = convertedValue * income();
+    return total;
+}
+
+function savingAmount() {
+    const saveAmount = document.getElementById('save-amount');
+    const previousAmount = saveAmount.innerText;
+    const newAmount = parseInt(previousAmount) + saving();
+    return saveAmount.innerText = newAmount;
+
+}
+
+/* function remaining() {
+    const remaining = document.getElementById('remainig-value');
+    const previousAmount = remaining.innerText;
+    const newAmount = parseInt(previousAmount) + balance() - saving();
+    remaining.innerText = newAmount;
+    return newAmount;
+} */
+document.getElementById('save-button').addEventListener('click', function() {
+    savingAmount();
+    remaining();
 
 });
