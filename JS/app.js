@@ -16,7 +16,7 @@ function income() {
 
 }
 
-function expenses() {
+function cost() {
     const foodInput = document.getElementById('food-input');
     const foodCost = foodInput.value;
     const restInput = document.getElementById('rest-input');
@@ -27,11 +27,11 @@ function expenses() {
     const costOfRest = parseInt(restCost);
     const costOfCloth = parseInt(clothCost);
 
-    const totalExpenses = costOfFood + costOfRest + costOfCloth;
+    const totalCost = costOfFood + costOfRest + costOfCloth;
 
 
     if (costOfFood > 0 && costOfRest > 0 && costOfCloth > 0) {
-        return totalExpenses;
+        return totalCost;
     } else {
         alert('Please enter a valid number');
     }
@@ -41,7 +41,27 @@ function expenses() {
 
 
 }
+
+function expense() {
+    const expense = document.getElementById('total-expense');
+    const totalExpense = expense.innerText;
+    expense.innerText = parseInt(totalExpense) + cost();
+}
+
+function balance() {
+    const balance = document.getElementById('total-balance');
+    const totalBalance = balance.innerText;
+    const totalIncome = income();
+    const totalExpense = cost();
+    const total = totalIncome - totalExpense;
+    balance.innerText = parseInt(totalBalance) + total;
+
+
+}
+
 document.getElementById('calculate-total').addEventListener('click', function() {
-    expenses();
+    expense();
+    balance();
+
 
 });
