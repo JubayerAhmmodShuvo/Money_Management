@@ -2,10 +2,33 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+#image-main {
+    height: 68vh;
+}
+
 #save {
     width: 25%;
 }
 
+
+/* save button width */
+
 #save-button {
     width: 30%;
+}
+
+
+/* all borders */
+
+.all-borders {
+    background-color: #DCDCDC;
+    border-radius: 5px;
+    border-style: none;
+    height: 3.3vh;
+}
+
+.btn {
+    background-color: #59A5FF;
+    color: white;
+    font-weight: 500;
 }
