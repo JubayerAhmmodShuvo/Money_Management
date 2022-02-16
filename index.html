@@ -8,18 +8,104 @@
     <title>Balance Counter</title>
 
     <!-- Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crssorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="CSS/style.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+
 </head>
 
 <body>
 
     <header>
+        <h1 class="text-center mt-4 fw-bold ">Balance Counter</h1>
 
     </header>
     <main>
+        <div class="container   mt-5">
+            <div class="row gx-5 ">
+                <div class="col-sm-12 col-lg-7 mt-5">
+                    <div class=""><img src=" images/calculation.jpg " alt=" "></div>
+                </div>
+                <div class="col-sm-12 col-lg-5 mt-5 ">
+                    <div class="p-3 border bg-light ">
+                        <h3 class="text-center mt-2">Income</h3>
+                        <div class="row mt-4">
+                            <div class="col-4">
+
+                                <h5 class="text-md-end ">Income:</h5>
+                            </div>
+                            <div class="col-8">
+
+                                <input type="text" name="" id="">
+                            </div>
+                        </div>
+                        <h3 class="text-center mt-4">Expenses</h3>
+                        <div class="row mt-4">
+                            <div class="col-4">
+
+                                <h5 class="text-md-end ">Food:</h5>
+                            </div>
+                            <div class="col-8">
+
+                                <input type="text" name="" id="">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-4">
+
+                                <h5 class="text-md-end ">Rent:</h5>
+                            </div>
+                            <div class="col-8">
+
+                                <input type="text" name="" id="">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-4">
+
+                                <h5 class="text-md-end ">Cloth:</h5>
+                            </div>
+                            <div class="col-8  ">
+
+                                <input type="text" name="" id="">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="d-grid  col-4 mx-auto">
+
+                                <button class="btn btn-primary" type="button">Calculate</button>
+                            </div>
+                        </div>
+                        <h5 class="text-center mt-3">Total Expenses:
+                            <span> 00</span></h5>
+                        <h5 class="text-center mt-3">Balance:<span> 00</span></h2>
+                            <div class="row mt-4">
+                                <div class="col d-flex">
+
+                                    <h5 class="text-md-start ms-5">Save:</h5> <input id="save" class="ms-3 " type="text" name="" id=""> <span class="ms-3 "> % </span><button id="save-button" class="btn btn-primary ms-3" type="button">Save</button>
+                                </div>
+
+                            </div>
+                            <h5 class="text-center mt-4">Saving Amount:
+                                <span> 00</span></h5>
+                            <h5 class="text-center mt-4">Remaining Balance:<span> 00</span></h2>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        </div>
 
     </main>
 
@@ -32,11 +118,11 @@
 
 
     <!-- Bootstrap Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
 
     <!-- Script js -->
 
-    <script src="JS/app.js"></script>
+    <script src="JS/app.js "></script>
 </body>
 
 </html>
