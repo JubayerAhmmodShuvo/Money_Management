@@ -2,9 +2,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+
+/* Image  */
+
 #image-main {
     height: 68vh;
 }
+
+
+/* input text of save-input */
 
 #save-input {
     width: 22%;
@@ -26,6 +32,9 @@ body {
     border-style: none;
     height: 35px;
 }
+
+
+/* button color and font color */
 
 .btn {
     background-color: #59A5FF;
