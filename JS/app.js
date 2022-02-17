@@ -95,11 +95,6 @@ function remainingBalance() {
         return remainingBalance;
     }
 
-
-
-
-
-
 }
 //save click button functionalities
 document.getElementById('save-button').addEventListener('click', function() {
