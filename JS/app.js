@@ -1,116 +1,103 @@
-function income() {
-    const totalInput = document.getElementById('total-income');
-    const totalIncome = totalInput.value;
-    const total = parseInt(totalIncome);
-    if (total > 0) {
-
-        return total;
+function getInputValue(inputId) {
+    const inputField = document.getElementById(inputId);
+    const inputAmountText = inputField.value;
+    const amountValue = parseFloat(inputAmountText);
+    if (amountValue > 0) {
+        return amountValue;
     } else {
-
-        alert('Please enter a valid Number');
-
-
-
+        alert('Please enter a valid amount');
     }
 }
-
 
 function cost() {
-    const foodInput = document.getElementById('food-input');
-    const foodCost = foodInput.value;
-    const restInput = document.getElementById('rest-input');
-    const restCost = restInput.value;
-    const clothInput = document.getElementById('cloth-input');
-    const clothCost = clothInput.value;
-    const costOfFood = parseInt(foodCost);
-    const costOfRest = parseInt(restCost);
-    const costOfCloth = parseInt(clothCost);
 
-    const totalCost = costOfFood + costOfRest + costOfCloth;
+    const foodInput = getInputValue('food-input');
+    const rentInput = getInputValue('rest-input');
+    const clothInput = getInputValue('cloth-input');
+    const totalCost = foodInput + rentInput + clothInput;
+    return totalCost;
 
-
-    if (costOfFood > 0 && costOfRest > 0 && costOfCloth > 0) {
-
-        return totalCost;
-    }
 
 }
 
-function expense() {
+function totalExpense() {
     const expense = document.getElementById('total-expense');
     const totalExpense = expense.innerText;
-    const total = parseInt(totalExpense) + cost();
+    const total = parseFloat(totalExpense) + cost();
 
-
-    if (total > 0) {
-        return expense.innerText = total;
-    }
-
-
+    expense.innerText = total;
 }
 
-function balance() {
+function totalBalance() {
     const balance = document.getElementById('total-balance');
-    const totalBalance = balance.innerText;
-    const totalIncome = income();
-    const totalExpense = cost();
-    const total = totalIncome - totalExpense;
 
-
+    const balanceTotal = balance.innerText;
+    const totalAmount = getInputValue('total-income');
+    const totalBalance = totalAmount - cost();
+    const total = parseFloat(balanceTotal) + totalBalance;
     if (total > 0) {
-        return balance.innerText = parseInt(totalBalance) + total;
+        return balance.innerText = total;
+    } else {
+        alert('Your balance is low');
     }
-
 }
-
-
-
-
-
-
+//calculation of calculate button
 document.getElementById('calculate-total').addEventListener('click', function() {
 
-    if (cost() > income()) {
-        alert('You are in debt');
+    const totalAmount = getInputValue('total-income');
+    if (totalAmount > cost()) {
+        totalExpense();
+        totalBalance();
     } else {
-        expense();
-        balance();
+        alert('Your balance is insufficient, Please enter value correclty otherwise you will be in debt');
     }
-
-
-
-
-
-
-
 });
-//saving part
 
-function saving() {
-    const saveInput = document.getElementById('save-input');
-    const inputValue = saveInput.value;
-    const convertedValue = parseInt(inputValue) / 100;
-    const total = convertedValue * income();
+function save() {
+    const totalAmount = getInputValue('total-income');
+    const totalPercent = getInputValue('save-input');
+    const beforeTotal = totalAmount * totalPercent;
+    const total = beforeTotal / 100;
     return total;
 }
 
 function savingAmount() {
     const saveAmount = document.getElementById('save-amount');
-    const previousAmount = saveAmount.innerText;
-    const newAmount = parseInt(previousAmount) + saving();
-    return saveAmount.innerText = newAmount;
+    const saveAmountText = saveAmount.innerText;
+    const total = parseFloat(saveAmountText) + save();
+
+    saveAmount.innerText = total;
+    return total;
+
 
 }
 
-/* function remaining() {
-    const remaining = document.getElementById('remainig-value');
-    const previousAmount = remaining.innerText;
-    const newAmount = parseInt(previousAmount) + balance() - saving();
-    remaining.innerText = newAmount;
-    return newAmount;
-} */
+function remainingBalance() {
+    const totalBalance = document.getElementById('total-balance');
+    const savingAmount = document.getElementById('save-amount');
+    const remainingBalance = totalBalance.innerText - savingAmount.innerText;
+    const totalRemaining = document.getElementById('value');
+
+
+    if (remainingBalance > 0) {
+        totalRemaining.innerText = remainingBalance;
+        return remainingBalance;
+    }
+
+
+
+
+
+
+}
+
 document.getElementById('save-button').addEventListener('click', function() {
+
+
     savingAmount();
-    remaining();
+    remainingBalance();
+
+
+
 
 });
