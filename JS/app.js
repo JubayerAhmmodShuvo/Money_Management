@@ -7,7 +7,7 @@ function getInputValue(inputId) {
     if (amountValue > 0) {
         return amountValue;
     } else {
-        alert('Please enter a valid amount');
+        alert('Please enter a valid value');
     }
 }
 //function for calculating the cost
